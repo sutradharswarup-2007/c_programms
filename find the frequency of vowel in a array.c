@@ -2,8 +2,8 @@
 #include <string.h>
 int main()
 {
-	char arr[15],brr[30];
-	int i,j,k=0;
+	char arr[15];
+	int i;
 	
 	printf("Enter the string :\n");
 	fgets(arr,sizeof(arr),stdin);
@@ -26,3 +26,4 @@ int main()
 	}
     return 0;
 }
+
