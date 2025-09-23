@@ -29,8 +29,8 @@ int main()
 
 	crr[k] = '\0';  // null-terminate final string
 
-	printf("%d\n", n);  // print final length
 	printf("After concatenation : %s\n", crr);
 	return 0;
 }
+
 
