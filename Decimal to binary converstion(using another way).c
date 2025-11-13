@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
+#include <stdio.h>
+#include <string.h>
+
 char* decimal_to_binary(int num)
 {
-    static char bin[33];  // static so the array persists after return
-    int i = 0,j;
+    static char bin[33];
+    int i = 0;
 
     if (num == 0) 
 	{
@@ -14,21 +17,14 @@ char* decimal_to_binary(int num)
 
     while (num > 0)
     {
-        bin[i] = (num % 2) + '0';
+        bin[i++] = (num % 2) + '0';
         num = num / 2;
-        i++;
     }
     bin[i] = '\0';
 
-    // reverse the string
-    for (j = 0; j < i / 2; j++)
-    {
-        char temp = bin[j];
-        bin[j] = bin[i - j - 1];
-        bin[i - j - 1] = temp;
-    }
+    strrev(bin);  // reverses the string in one call
 
-    return bin;  // return pointer to binary string
+    return bin;
 }
 
 int main()
@@ -41,4 +37,5 @@ int main()
     printf("Binary: %s\n", binary);
     return 0;
 }
+
 
