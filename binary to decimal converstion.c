@@ -2,22 +2,18 @@
 #include <math.h>
 int main()
 {
-	int num1,num2,d,sum=0,c=0;
-	printf("Enter the first number : ");
+	int num;
+	int d, i = 0, sum = 0;
+	printf("Enter the binary number : ");
 	scanf("%d",&num1);
-    num2=num1;
-	while(num1>0)
-	{
-		num1 = num1 / 10;
-		c++;
-	}
-	while(num2>0)
-	{
-		num2= num2 / 10;
-		d = num2 % 10;
-		sum= sum + d*pow(2,c-1);
-		c--;
-	}
+    while (num > 0)
+    {
+        d = num % 10;                 // get last digit
+        sum = sum + d * pow(2, i);   // multiply by 2^i
+        i++;                        // move to next bit position
+        num = num / 10;            // remove last digit
+    }
 	printf("%d",sum);
 	return 0;
 }
+
